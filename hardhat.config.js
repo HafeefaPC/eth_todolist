@@ -15,8 +15,8 @@ module.exports = {
   networks: {
     hardhat: {},
     volta: {
-      url: "https://volta-rpc.energyweb.org",
-      accounts: [`0x0faa7ff8c8623e46ea6e94e140c79e680e5a7b3e3dbb30877a3a13da12edc0ec`],
+      url: API_URL,
+      accounts: [`0x${PRIVATE_KEY}`],
       gas: 210000000,
       gasPrice: 700000000000,
     }
