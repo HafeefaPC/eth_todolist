@@ -1,6 +1,12 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
+const fileUpload = require('express-fileupload');
+app.use(
+    fileUpload({
+        extended: true
+    })
+)
 app.use(express.static(__dirname))
 app.use(express.json())
 const ethers = require("ethers");
@@ -24,7 +30,7 @@ const { abi } = require('./artifacts/contracts/TaskTodo.sol/TaskToDo.json')
 const provider = new ethers.providers.JsonRpcProvider(API_URL)
 
 const signer = new ethers.Wallet(PRIVATE_KEY, provider);
-constcontractInstance = new ethers.Contract(contractAddress, abi, signer);
+const contractInstance = new ethers.Contract(contractAddress, abi, signer);
 
 
 app.post('/addTask', async (req, res) => {

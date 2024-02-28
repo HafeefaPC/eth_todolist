@@ -18,7 +18,7 @@ module.exports = {
       url: API_URL,
       accounts: [`0x${PRIVATE_KEY}`],
       gas: 210000000,
-      gasPrice: 700000000000,
+      gasPrice: 800000000000,
     }
   },
 }
